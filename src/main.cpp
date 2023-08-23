@@ -30,12 +30,11 @@ void updateIndex(){
     mPos_map = mPos_map / GridSize;
     mapIndex = mPos_map.x+mPos_map.y*MAP_WIDTH;
 } 
-
 void update(){
-    // update player pos
+    // update player pos 
     vf2d dir;
     if(left) dir.x = -1;
-    if(right) dir.x = 1;
+    if(right) dir.x = 1; 
     if(up) dir.y = -1;
     if(down) dir.y = 1;
     dir = dir.norm() * ((float)pV * elapFTime / 1000);
@@ -139,7 +138,7 @@ void render(){
         SDL_RenderDrawLine(renderer,pPos.x,pPos.y,mPos.x,mPos.y);
     }
 
-    // draw intersection between ray and block
+    // draw intersection on the block
     if(foundBlock){
         SDL_SetRenderDrawColor(renderer, 255,255,0,255);
         SDL_RenderDrawCircle(renderer, intersectionPos.x,intersectionPos.y, 3);
